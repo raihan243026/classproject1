@@ -1,1 +1,769 @@
+.container {
+    /*width: 90%;*/
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: black;
+}
+
+.logo {
+    font-size: 20px;
+    font-family: Epilogue;
+    line-height: 30px;
+    color: #2d2d2d;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    color: darkblue; /*change color on hover*/
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: #2d2d2d;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2d2d2d;
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 17px;
+    font-family: Epilogue;
+    position: relative; /* Needed for pseudo-element positioning */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.nav-links a:hover {
+    color: blue;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    bottom: -5px; /* Adjust the distance of the underline */
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+}
+.content-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.content-section h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.content-section p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Home Section Styles */
+.home-section {
+    background: black;
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.home-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.explore-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #ffc107;
+    color: #333;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* About Section Styles */
+.about-section {
+   
+    background-color: black;
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.team-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.team-image {
+    max-width: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.team-image-container:hover .team-image {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.team-image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+/*.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.member {
+    text-align: center;
+}
+
+.member h3 {
+    margin-bottom: 10px;
+}
+*/
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Animated Background Elements */
+.home-background::before,
+.about-background::before,
+.home-background::after,
+.about-background::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(70px);
+    animation: float 8s infinite alternate;
+}
+
+.home-background::before,
+.about-background::before {
+    top: 20%;
+    left: 10%;
+}
+
+.home-background::after,
+.about-background::after {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(30px);
+    }
+}
+/*
+.content-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.content-section h2 {
+    margin-bottom: 20px;
+}
+
+.content-section button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+} */
+#contact {
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 1; /* Ensure content is above background */
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.contact-text {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.call-button {
+    background-color: #27ae60; /* Green for call */
+    color: white;
+}
+
+.email-button {
+    background-color: #3498db; /* Blue for email */
+    color: white;
+}
+
+.contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Subtle radial gradient */
+    z-index: 0;
+    pointer-events: none; /* Allows interaction with content above */
+}
+
+/* Optional: Add animated background elements */
+.contact-background::before,
+.contact-background::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    filter: blur(50px);
+    animation: float 6s infinite alternate;
+}
+
+.contact-background::before {
+    top: 10%;
+    left: 20%;
+}
+
+.contact-background::after {
+    bottom: 10%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+/*.person-container{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.image-one > img {
+    max-width: 320px;
+    height: 320px;
+    margin: 0px;
+    width: 320px;
+    border-radius: 50px;
+}
+
+.image-two > img {
+    max-width: 320px;
+    height: 320px;
+    margin: 0px;
+    width: 320px;
+    border-radius: 50px;
+}
+
+.image-three > img {
+    max-width: 320px;
+    height: 320px;
+    margin: 0px;
+    width: 320px;
+    border-radius: 50px;
+}
+.first-persontext {
+
+}
+.first-persontext >h1 {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+
+}
+.first-persontext >p {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+    
+}
+
+.second-persontext {
+
+}
+.second-persontext >h1 {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+
+}
+.second-persontext >p {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+    
+}
+
+.third-persontext {
+
+}
+.third-persontext >h1 {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+
+}
+.third-persontext >p {
+    text-align: center;
+    font-size: medium;
+    line-height: 24px;
+    
+} 
+    */
+/*
+    .image-showing {
+        position: relative; /* For sidebar positioning */
+    
+    /*
+    .person-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    
+    .person {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .person:hover {
+        transform: translateY(-5px);
+    }
+    
+    .image-container > img {
+        max-width: 320px;
+        height: 320px;
+        width: 320px;
+        border-radius: 50px;
+        transition: transform 0.3s ease;
+    }
+    
+    .image-container > img:hover {
+        transform: scale(1.05);
+    }
+    
+    .person-text {
+        text-align: center;
+    }
+    
+    .person-text > h1 {
+        font-size: medium;
+        line-height: 24px;
+    }
+    
+    .person-text > p {
+        font-size: medium;
+        line-height: 24px;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Initially hidden 
+        width: 300px;
+        height: 100%;
+        background-color: #f0f0f0;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .sidebar.active {
+        right: 0; /* Show sidebar when active 
+    }
+    
+    .sidebar-content {
+        text-align: center;
+    }
+    
+    #closeSidebar {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    */
+    .image-showing {
+        position: relative;
+        background: linear-gradient(135deg, #f0f0f0, #e0e0e0); /* Subtle gradient */
+        padding: 50px 0;
+    }
+    
+    .person-container {
+        display: flex;
+        justify-content: center; /* Center the persons */
+        gap: 30px;
+        background-color: black;
+    }
+    
+    .person {
+        cursor: pointer;
+        transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.4s ease; /* More dynamic transition */
+        position: relative;
+        overflow: hidden; /* For overlay effect */
+    }
+    
+    .person:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    }
+    
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    
+    .image-container > img {
+        width: 320px;
+        height: 320px;
+        object-fit: cover;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    .image-container:hover > img {
+        transform: scale(1.1);
+    }
+    
+    .image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Gradient overlay */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 50%;
+    }
+    
+    .image-container:hover .image-overlay {
+        opacity: 1;
+    }
+    
+    .person-text {
+        text-align: center;
+        margin-top: 15px;
+    }
+    
+    .person-text > h1 {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+    .person-text > h3 {
+        
+        color: #333;
+        margin-top: 5px;
+        transition: color 0.3s ease;
+    }
+    .person:hover .person-text > h3 {
+        color: brown; /* Change color on hover */
+    }
+    .person:hover .person-text > h1 {
+        color: #007bff; /* Change color on hover */
+    }
+    
+    .person-text > p {
+        color: #666;
+        margin-top: 5px;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 350px;
+        height: 100%;
+        background: linear-gradient(135deg, #e6f7ff, #b3e0ff); /* Light blue gradient */
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        transition: right 0.5s cubic-bezier(0.19, 1, 0.22, 1); /* Smoother sidebar animation */
+        padding: 50px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sidebar.active {
+        right: 0;
+    }
+    
+    .sidebar-content {
+        text-align: center;
+    }
+    
+    #closeSidebar {
+        margin-top: 30px;
+        padding: 12px 25px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    #closeSidebar:hover {
+        background-color: #0056b3;
+    }
+
+    .advanced-footer {
+        position: relative;
+        overflow: hidden;
+       background-color:black;
+        color: #ecf0f1;
+        padding: 80px 20px;
+        text-align: left;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1; /* Content above background */
+    }
+    
+    .footer-section {
+        flex: 1 1 250px;
+        margin-bottom: 30px;
+    }
+    
+    .footer-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #3498db; /* Accent color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .footer-section p {
+        line-height: 1.6;
+        opacity: 0.8;
+    }
+    
+    .social-links {
+        margin-top: 20px;
+    }
+    
+    .social-link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        color: #ecf0f1;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .social-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-section ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        line-height: 2;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover {
+        color: #3498db;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        padding-top: 50px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    /* Animated background elements */
+    .footer-background::before,
+    .footer-background::after {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        filter: blur(70px);
+        animation: float 8s infinite alternate;
+    }
+    
+    .footer-background::before {
+        top: 20%;
+        left: 10%;
+    }
+    
+    .footer-background::after {
+        bottom: 20%;
+        right: 10%;
+        animation-delay: 3s;
+    }
+    
+    @keyframes float {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(30px);
+        }
+    }
