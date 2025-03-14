@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <nav class="nav-bar">
+            <div class="logo">Logo</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content-section home-section">
+        <div class="home-content">
+            <h2 class="home-title">Unleash Your Digital Potential</h2>
+            <p class="home-subtitle">Experience the future of web innovation.</p>
+            <a href="#about" class="explore-button">Explore Our Story</a>
+        </div>
+        <div class="home-background"></div>
+    </section>
+    
+    <section id="about" class="content-section about-section">
+        <div class="about-content">
+            <h2 class="about-title">Meet Our Visionaries</h2>
+            <p class="about-text">We are a collective of passionate developers, designers, and innovators dedicated to crafting exceptional digital experiences.</p>
+            <div class="team-image-container">
+                <img src="./assests/teamimage.png" alt="Team Image" class="team-image">
+                <div class="image-overlay"></div>
+            </div>
+            <p class="about-text">Our synergy drives us to push boundaries and create solutions that inspire and transform.</p>
+           
+        </div>
+        <div class="about-background"></div>
+    </section>
+
+
+    <section class="image-showing">
+        <div class="person-container">
+            <div class="person" data-name="Ali" data-id="E243045">
+                <div class="image-container">
+                    <img src="./assests/p1.png.jpg" alt="Ali">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="person-text">
+                    <h1>Ali</h1>
+                    <p>E243045</p>
+                    <h3>Lead Developer </h3>
+                </div>
+            </div>
+            <div class="person" data-name="Rahat" data-id="E243031">
+                <div class="image-container">
+                    <img src="./assests/p2.png" alt="Rahat">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="person-text">
+                    <h1>Rahat</h1>
+
+                    <p>E243031</p>
+                    <h3> Project Manager</h3>
+                </div>
+            </div>
+            <div class="person" data-name="Raihan" data-id="E243026">
+                <div class="image-container">
+                    <img src="./assests/p3.png" alt="Raihan">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="person-text">
+                    <h1>Raihan</h1>
+                    <p> E243026</p>
+                    <h3> UI/UX Designer</h3>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar" id="personSidebar">
+            <div class="sidebar-content">
+                <h2 id="sidebarName"></h2>
+                <p id="sidebarId"></p>
+                <button id="closeSidebar">Close</button>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <section id="contact" class="content-section">
+        <div class="contact-container">
+            <h2>Get in Touch</h2>
+            <p class="contact-text">We're here to help. Reach out to us with any questions or inquiries.</p>
+            <div class="contact-actions">
+                <button class="contact-button call-button" onclick="window.location.href='tel:+01936705193'">
+                    <i class="fas fa-phone-alt"></i> Call: 01936705193
+                </button>
+                <button class="contact-button email-button" onclick="window.location.href='mailto:your.email@example.com'">
+                    <i class="fas fa-envelope"></i> Email Us
+                </button>
+            </div>
+            <div class="contact-background"></div>
+        </div>
+    </section>
+
+    <footer class="advanced-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2 class="footer-title">About Us</h2>
+                <p>We are dedicated to providing exceptional services and innovative solutions. Our goal is to exceed expectations and deliver outstanding results.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2 class="footer-title">Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2 class="footer-title">Contact Info</h2>
+                <p><i class="fas fa-map-marker-alt"></i> 1401 sk.mujib road, chattogram </p>
+                <p><i class="fas fa-phone"></i> +880-01936705193</p>
+                <p><i class="fas fa-envelope"></i> info@example.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Your Company. All rights reserved.</p>
+        </div>
+        <div class="footer-background"></div>
+    </footer>
+    
+
+</body>
+</html>
